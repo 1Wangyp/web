@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>功能详情 - 轻松启蒙</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .feature-detail {
+            padding: 60px 0;
+            background-color: white;
+        }
+        .feature-detail-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .feature-detail-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .feature-detail-header h2 {
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+        .feature-detail-header p {
+            font-size: 18px;
+            color: var(--text-light);
+        }
+        .feature-detail-body {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .feature-detail-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .feature-detail-section h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+        .feature-detail-section p {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        .feature-detail-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        .back-link:hover {
+            color: var(--primary-color);
+        }
+        .floating-back-btn {
+            position: fixed;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .floating-back-btn:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        .floating-back-btn i {
+            font-size: 20px;
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航区 -->
+    <header class="top-nav">
+        <div class="container">
+            <div class="nav-left">
+                <div class="logo">
+                    <img src="image/生成APP引导页首屏.png" alt="轻松启蒙" class="mascot">
+                    <h1>轻松启蒙</h1>
+                </div>
+            </div>
+            <div class="nav-right">
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-item">首页</a>
+                    <a href="product.html" class="nav-item active">产品中心</a>
+                    <a href="about.html" class="nav-item">关于我们</a>
+                    <a href="contact.html" class="nav-item">联系我们</a>
+                </nav>
+                <div class="nav-actions">
+                    <a href="login.html" class="nav-btn">登录</a>
+                    <a href="register.html" class="nav-btn primary">注册</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 悬浮返回按钮 -->
+    <div class="floating-back-btn" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+
+    <!-- 功能详情区 -->
+    <section class="feature-detail">
+        <div class="container">
+            <div class="feature-detail-content">
+                <div class="feature-detail-header">
+                    <h2 id="featureName">功能详情</h2>
+                    <p>为孩子提供全面的启蒙教育体验</p>
+                </div>
+                <div class="feature-detail-body">
+                    <div class="feature-detail-section">
+                        <h3>功能介绍</h3>
+                        <p>通过有趣的互动游戏、丰富的绘本内容和欢快的儿歌动画，激发孩子的学习兴趣，培养良好的学习习惯，开启快乐学习之旅。</p>
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=children%20education%20platform%20interface%2C%20colorful%20and%20friendly%2C%20simple%20style&image_size=landscape_16_9" alt="功能介绍" class="feature-detail-image">
+                    </div>
+                    <div class="feature-detail-section">
+                        <h3>核心优势</h3>
+                        <p>我们的功能设计符合幼儿认知发展规律，通过游戏化的方式让孩子在快乐中学习，培养他们的创造力和思维能力。</p>
+                    </div>
+                    <div class="feature-detail-section">
+                        <h3>使用方法</h3>
+                        <p>1. 选择适合孩子年龄的内容<br>2. 引导孩子参与互动<br>3. 鼓励孩子完成任务<br>4. 查看学习报告</p>
+                    </div>
+                </div>
+                <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> 返回首页</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部信息区 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <img src="image/生成APP引导页首屏.png" alt="轻松启蒙" class="mascot">
+                        <h2>轻松启蒙</h2>
+                    </div>
+                    <p>专业的幼儿教育平台，为孩子提供全面的启蒙教育体验</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-weibo"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-qq"></i></a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <h3>产品中心</h3>
+                    <ul>
+                        <li><a href="product.html">趣味启蒙</a></li>
+                        <li><a href="product.html">互动绘本</a></li>
+                        <li><a href="product.html">儿歌动画</a></li>
+                        <li><a href="product.html">家长中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h3>关于我们</h3>
+                    <ul>
+                        <li><a href="about.html">公司简介</a></li>
+                        <li><a href="about.html">团队介绍</a></li>
+                        <li><a href="about.html">新闻动态</a></li>
+                        <li><a href="about.html">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 400-123-4567</li>
+                        <li><i class="fas fa-envelope"></i> contact@qingsongqimeng.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 北京市海淀区中关村大街1号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 轻松启蒙 版权所有 | 京ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 获取URL参数中的功能名称
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+        
+        // 功能数据
+        const featuresData = {
+            '趣味启蒙': {
+                description: '通过有趣的互动游戏，激发孩子的学习兴趣，培养创造力和思维能力。我们的趣味启蒙功能包含多种互动游戏，涵盖数学、语言、逻辑等多个领域，让孩子在游戏中学习，在学习中成长。',
+                advantages: '1. 游戏化学习，提高学习兴趣\n2. 涵盖多个学科领域\n3. 适合不同年龄段的孩子\n4. 实时反馈，增强学习动力',
+                usage: '1. 选择适合孩子年龄的游戏\n2. 引导孩子参与互动\n3. 鼓励孩子完成挑战\n4. 查看学习进度和成果'
+            },
+            '互动绘本': {
+                description: '丰富的绘本内容，培养孩子的阅读习惯，提高语言表达能力和想象力。我们的互动绘本功能包含大量优质绘本，支持有声朗读、互动问答等多种形式，让孩子在阅读中享受乐趣。',
+                advantages: '1. 丰富的绘本资源\n2. 专业的有声朗读\n3. 互动问答，增强理解\n4. 培养良好的阅读习惯',
+                usage: '1. 选择适合孩子的绘本\n2. 播放有声朗读\n3. 参与互动问答\n4. 鼓励孩子复述故事内容'
+            },
+            '儿歌动画': {
+                description: '欢快的儿歌和动画，让孩子在快乐中学习，培养音乐感和节奏感。我们的儿歌动画功能包含大量经典儿歌和原创动画，内容健康积极，适合幼儿观看。',
+                advantages: '1. 丰富的儿歌资源\n2. 精美的动画制作\n3. 培养音乐感和节奏感\n4. 内容健康积极',
+                usage: '1. 选择喜欢的儿歌\n2. 观看动画视频\n3. 跟随音乐一起唱\n4. 学习歌词和动作'
+            }
+        };
+        
+        // 设置功能信息
+        const featureName = getUrlParameter('name');
+        if (featureName && featuresData[featureName]) {
+            const featureData = featuresData[featureName];
+            document.getElementById('featureName').textContent = featureName;
+            document.querySelector('.feature-detail-section:nth-child(1) p').textContent = featureData.description;
+            document.querySelector('.feature-detail-section:nth-child(2) p').textContent = featureData.advantages;
+            document.querySelector('.feature-detail-section:nth-child(3) p').textContent = featureData.usage;
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

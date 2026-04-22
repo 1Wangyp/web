@@ -17,23 +17,17 @@
                     <h1>轻松启蒙</h1>
                 </div>
             </div>
-            <div class="nav-center">
-                <div class="search-bar">
-                    <input type="text" placeholder="搜索绘本、儿歌..." class="search-input">
-                    <button class="search-btn"><i class="fas fa-search"></i></button>
-                </div>
-            </div>
             <div class="nav-right">
-                <a href="#" class="nav-link"><i class="fas fa-user"></i> 我的</a>
-                <a href="#" class="nav-link"><i class="fas fa-user-shield"></i> 家长中心</a>
-            </div>
-        </div>
-        <!-- 导航菜单 -->
-        <div class="nav-menu">
-            <div class="container">
-                <a href="#" class="menu-item active">趣味启蒙</a>
-                <a href="#" class="menu-item">互动绘本</a>
-                <a href="#" class="menu-item">儿歌动画</a>
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-item active">首页</a>
+                    <a href="product.html" class="nav-item">产品中心</a>
+                    <a href="about.html" class="nav-item">关于我们</a>
+                    <a href="contact.html" class="nav-item">联系我们</a>
+                </nav>
+                <div class="nav-actions">
+                    <a href="login.html" class="nav-btn">登录</a>
+                    <a href="register.html" class="nav-btn primary">注册</a>
+                </div>
             </div>
         </div>
     </header>
@@ -49,110 +43,129 @@
         <div class="container">
             <div class="banner-content">
                 <div class="banner-text">
-                    <h2>轻松启蒙</h2>
-                    <p>开启快乐学习之旅</p>
-                    <button class="start-btn">立即开始</button>
+                    <h1>轻松启蒙</h1>
+                    <h2>专业的幼儿教育平台</h2>
+                    <p>通过有趣的互动游戏、丰富的绘本内容和欢快的儿歌动画，激发孩子的学习兴趣，培养良好的学习习惯，开启快乐学习之旅。</p>
+                    <div class="banner-buttons">
+                        <a href="product.html" class="banner-btn primary">了解产品</a>
+                        <a href="trial.html" class="banner-btn secondary">免费试用</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 功能模块区 -->
-    <section class="feature-section">
+    <!-- 核心功能区 -->
+    <section class="features-section">
         <div class="container">
-            <!-- 趣味启蒙 -->
-            <div class="feature-card full-width yellow-bg">
-                <div class="feature-content">
-                    <h3>趣味启蒙</h3>
-                    <p>通过有趣的互动游戏，激发孩子的学习兴趣</p>
-                </div>
+            <div class="section-header">
+                <h2>核心功能</h2>
+                <p>为孩子提供全面的启蒙教育体验</p>
             </div>
-
-            <!-- 第二行：互动绘本和儿歌动画 -->
-            <div class="row">
-                <div class="feature-card green-bg">
+            <div class="features-grid">
+                <div class="feature-card" onclick="window.location.href='feature.html?name=趣味启蒙'">
+                    <div class="feature-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>趣味启蒙</h3>
+                    <p>通过有趣的互动游戏，激发孩子的学习兴趣，培养创造力和思维能力。</p>
+                </div>
+                <div class="feature-card" onclick="window.location.href='feature.html?name=互动绘本'">
                     <div class="feature-icon">
                         <i class="fas fa-book"></i>
                     </div>
                     <h3>互动绘本</h3>
-                    <p>丰富的绘本内容，培养孩子的阅读习惯</p>
+                    <p>丰富的绘本内容，培养孩子的阅读习惯，提高语言表达能力和想象力。</p>
                 </div>
-                <div class="feature-card pink-bg">
+                <div class="feature-card" onclick="window.location.href='feature.html?name=儿歌动画'">
                     <div class="feature-icon">
                         <i class="fas fa-play"></i>
                     </div>
                     <h3>儿歌动画</h3>
-                    <p>欢快的儿歌和动画，让孩子在快乐中学习</p>
+                    <p>欢快的儿歌和动画，让孩子在快乐中学习，培养音乐感和节奏感。</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- 第三行：每日任务和热门图书 -->
-            <div class="row">
-                <!-- 每日任务 -->
-                <div class="feature-card beige-bg">
-                    <div class="task-header">
-                        <h3>每日任务</h3>
-                        <a href="#" class="more-link">更多 ></a>
+    <!-- 产品优势区 -->
+    <section class="advantages-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>产品优势</h2>
+                <p>为什么选择轻松启蒙</p>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-item" onclick="window.location.href='product.html'">
+                    <div class="advantage-icon">
+                        <i class="fas fa-check-circle"></i>
                     </div>
-                    <div class="task-item">
-                        <div class="task-info">
-                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cute%20cartoon%20children%20reading%20book%20at%20night%2C%20simple%20style&image_size=square" alt="每日阅读" class="task-icon">
-                            <div class="task-details">
-                                <h4>每日阅读</h4>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 20%;"></div>
-                                </div>
-                                <p>进度: 20%</p>
-                            </div>
-                        </div>
-                        <button class="task-btn">去完成</button>
+                    <h3>专业内容</h3>
+                    <p>由教育专家精心设计的课程内容，符合幼儿认知发展规律。</p>
+                </div>
+                <div class="advantage-item" onclick="window.location.href='product.html'">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shield-alt"></i>
                     </div>
-                    <div class="task-item">
-                        <div class="task-info">
-                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cute%20cartoon%20children%20writing%20characters%2C%20simple%20style&image_size=square" alt="每日听写" class="task-icon">
-                            <div class="task-details">
-                                <h4>每日听写</h4>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 100%;"></div>
-                                </div>
-                                <p>进度: 100%</p>
-                            </div>
-                        </div>
-                        <button class="task-btn completed">已完成</button>
+                    <h3>安全保障</h3>
+                    <p>无广告、无暴力内容，为孩子提供安全健康的学习环境。</p>
+                </div>
+                <div class="advantage-item" onclick="window.location.href='product.html'">
+                    <div class="advantage-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>智能评估</h3>
+                    <p>实时跟踪孩子的学习进度，提供个性化的学习建议。</p>
+                </div>
+                <div class="advantage-item" onclick="window.location.href='product.html'">
+                    <div class="advantage-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>多端同步</h3>
+                    <p>支持手机、平板等多种设备，随时随地学习。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 热门图书区 -->
+    <section class="books-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>热门图书</h2>
+                <a href="#" class="more-link">查看全部</a>
+            </div>
+            <div class="books-grid">
+                <div class="book-item">
+                    <img src="image/猜猜我有多爱你.png" alt="猜猜我有多爱你" class="book-cover">
+                    <div class="book-info">
+                        <h4>猜猜我有多爱你</h4>
+                        <span class="book-tag">有声</span>
+                        <p>睡前，温柔表达爱意的经典绘本</p>
                     </div>
                 </div>
-
-                <!-- 热门图书 -->
-                <div class="feature-card blue-bg">
-                    <div class="book-header">
-                        <h3>热门图书</h3>
-                        <a href="#" class="more-link">更多 ></a>
+                <div class="book-item">
+                    <img src="image/蚂蚁和西瓜.png" alt="蚂蚁和西瓜" class="book-cover">
+                    <div class="book-info">
+                        <h4>蚂蚁和西瓜</h4>
+                        <span class="book-tag">绘本</span>
+                        <p>讲述团结合作，画面热闹有趣</p>
                     </div>
-                    <div class="book-scroll">
-                        <div class="book-item">
-                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cute%20cartoon%20rabbit%20and%20child%20hugging%2C%20picture%20book%20cover%2C%20simple%20style&image_size=portrait_4_3" alt="猜猜我有多爱你" class="book-cover">
-                            <div class="book-info">
-                                <h4>猜猜我有多爱你</h4>
-                                <span class="book-tag">有声</span>
-                                <p>睡前，温柔表达爱意...</p>
-                            </div>
-                        </div>
-                        <div class="book-item">
-                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cute%20cartoon%20ants%20and%20watermelon%2C%20picture%20book%20cover%2C%20simple%20style&image_size=portrait_4_3" alt="蚂蚁和西瓜" class="book-cover">
-                            <div class="book-info">
-                                <h4>蚂蚁和西瓜</h4>
-                                <span class="book-tag">绘本</span>
-                                <p>讲述团结合作，画面热...</p>
-                            </div>
-                        </div>
-                        <div class="book-item">
-                            <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cute%20cartoon%20bear%20reading%20book%2C%20picture%20book%20cover%2C%20simple%20style&image_size=portrait_4_3" alt="小熊宝宝绘本" class="book-cover">
-                            <div class="book-info">
-                                <h4>小熊宝宝绘本</h4>
-                                <span class="book-tag">绘本</span>
-                                <p>习惯养成绘本，吃饭、...</p>
-                            </div>
-                        </div>
+                </div>
+                <div class="book-item">
+                    <img src="image/小熊宝宝.png" alt="小熊宝宝绘本" class="book-cover">
+                    <div class="book-info">
+                        <h4>小熊宝宝绘本</h4>
+                        <span class="book-tag">绘本</span>
+                        <p>习惯养成绘本，吃饭、睡觉等日常好习惯</p>
+                    </div>
+                </div>
+                <div class="book-item">
+                    <img src="image/大象艾玛儿童书籍封面设计 (1).png" alt="大象艾玛" class="book-cover">
+                    <div class="book-info">
+                        <h4>大象艾玛</h4>
+                        <span class="book-tag">有声</span>
+                        <p>教会孩子接纳自己和他人的不同</p>
                     </div>
                 </div>
             </div>
@@ -163,12 +176,47 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>© 2026 轻松启蒙 版权所有</p>
-                <div class="footer-links">
-                    <a href="#">家长服务</a>
-                    <a href="#">关于我们</a>
-                    <a href="#">联系我们</a>
+                <div class="footer-logo">
+                    <div class="logo">
+                        <img src="image/生成APP引导页首屏.png" alt="轻松启蒙" class="mascot">
+                        <h2>轻松启蒙</h2>
+                    </div>
+                    <p>专业的幼儿教育平台，为孩子提供全面的启蒙教育体验</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-weibo"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-qq"></i></a>
+                    </div>
                 </div>
+                <div class="footer-nav">
+                    <h3>产品中心</h3>
+                    <ul>
+                        <li><a href="product.html">趣味启蒙</a></li>
+                        <li><a href="product.html">互动绘本</a></li>
+                        <li><a href="product.html">儿歌动画</a></li>
+                        <li><a href="product.html">家长中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h3>关于我们</h3>
+                    <ul>
+                        <li><a href="about.html">公司简介</a></li>
+                        <li><a href="about.html">团队介绍</a></li>
+                        <li><a href="about.html">新闻动态</a></li>
+                        <li><a href="about.html">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i>176-1412-6391 </li>
+                        <li><i class="fas fa-envelope"></i> xtiii0razs@163.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 杭州市钱塘区未来康瑞大厦</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 轻松启蒙 版权所有 | 京ICP备12345678号</p>
             </div>
         </div>
     </footer>

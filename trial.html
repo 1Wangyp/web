@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>免费试用 - 轻松启蒙</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .trial-section {
+            padding: 60px 0;
+            background-color: var(--background-color);
+            min-height: calc(100vh - 200px);
+            display: flex;
+            align-items: center;
+        }
+        .trial-container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .trial-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .trial-header h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+        .trial-header p {
+            font-size: 16px;
+            color: var(--text-light);
+        }
+        .trial-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .form-group label {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        .form-group input {
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(255, 232, 139, 0.2);
+        }
+        .form-group select {
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(255, 232, 139, 0.2);
+        }
+        .form-options {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+        .form-options input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+        }
+        .form-options label {
+            color: var(--text-light);
+            cursor: pointer;
+        }
+        .form-options a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .form-options a:hover {
+            text-decoration: underline;
+        }
+        .trial-btn {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        .trial-btn:hover {
+            transform: scale(1.02);
+            background-color: #FFC107;
+        }
+        .trial-features {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+        }
+        .trial-features h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        .feature-item i {
+            color: var(--primary-color);
+            font-size: 16px;
+        }
+        .floating-back-btn {
+            position: fixed;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .floating-back-btn:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        .floating-back-btn i {
+            font-size: 20px;
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航区 -->
+    <header class="top-nav">
+        <div class="container">
+            <div class="nav-left">
+                <div class="logo">
+                    <img src="image/生成APP引导页首屏.png" alt="轻松启蒙" class="mascot">
+                    <h1>轻松启蒙</h1>
+                </div>
+            </div>
+            <div class="nav-right">
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-item">首页</a>
+                    <a href="product.html" class="nav-item">产品中心</a>
+                    <a href="about.html" class="nav-item">关于我们</a>
+                    <a href="contact.html" class="nav-item">联系我们</a>
+                </nav>
+                <div class="nav-actions">
+                    <a href="login.html" class="nav-btn">登录</a>
+                    <a href="register.html" class="nav-btn primary">注册</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 悬浮返回按钮 -->
+    <div class="floating-back-btn" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+
+    <!-- 免费试用区 -->
+    <section class="trial-section">
+        <div class="container">
+            <div class="trial-container">
+                <div class="trial-header">
+                    <h2>免费试用</h2>
+                    <p>填写以下信息，即可免费试用轻松启蒙产品</p>
+                </div>
+                <form class="trial-form">
+                    <div class="form-group">
+                        <label for="parent-name">家长姓名</label>
+                        <input type="text" id="parent-name" name="parent-name" placeholder="请输入您的姓名">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">联系电话</label>
+                        <input type="tel" id="phone" name="phone" placeholder="请输入您的联系电话">
+                    </div>
+                    <div class="form-group">
+                        <label for="child-age">孩子年龄</label>
+                        <select id="child-age" name="child-age">
+                            <option value="">请选择</option>
+                            <option value="3">3岁</option>
+                            <option value="4">4岁</option>
+                            <option value="5">5岁</option>
+                            <option value="6">6岁</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">邮箱</label>
+                        <input type="email" id="email" name="email" placeholder="请输入您的邮箱">
+                    </div>
+                    <div class="form-options">
+                        <input type="checkbox" id="agreement" name="agreement">
+                        <label for="agreement">我已阅读并同意<a href="#">《用户协议》</a>和<a href="#">《隐私政策》</a></label>
+                    </div>
+                    <button type="submit" class="trial-btn">立即申请试用</button>
+                </form>
+                <div class="trial-features">
+                    <h3>试用权益</h3>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>7天免费试用</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>全功能访问</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>专业客服支持</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>无广告打扰</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部信息区 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <img src="image/生成APP引导页首屏.png" alt="轻松启蒙" class="mascot">
+                        <h2>轻松启蒙</h2>
+                    </div>
+                    <p>专业的幼儿教育平台，为孩子提供全面的启蒙教育体验</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-weibo"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-qq"></i></a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <h3>产品中心</h3>
+                    <ul>
+                        <li><a href="product.html">趣味启蒙</a></li>
+                        <li><a href="product.html">互动绘本</a></li>
+                        <li><a href="product.html">儿歌动画</a></li>
+                        <li><a href="product.html">家长中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h3>关于我们</h3>
+                    <ul>
+                        <li><a href="about.html">公司简介</a></li>
+                        <li><a href="about.html">团队介绍</a></li>
+                        <li><a href="about.html">新闻动态</a></li>
+                        <li><a href="about.html">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 400-123-4567</li>
+                        <li><i class="fas fa-envelope"></i> contact@qingsongqimeng.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 北京市海淀区中关村大街1号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 轻松启蒙 版权所有 | 京ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 试用表单提交事件
+        document.querySelector('.trial-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const parentName = document.getElementById('parent-name').value;
+            const phone = document.getElementById('phone').value;
+            const childAge = document.getElementById('child-age').value;
+            const email = document.getElementById('email').value;
+            const agreement = document.getElementById('agreement').checked;
+            
+            if (!parentName) {
+                alert('请输入家长姓名');
+                return;
+            }
+            if (!phone) {
+                alert('请输入联系电话');
+                return;
+            }
+            if (!childAge) {
+                alert('请选择孩子年龄');
+                return;
+            }
+            if (!email) {
+                alert('请输入邮箱');
+                return;
+            }
+            if (!agreement) {
+                alert('请阅读并同意用户协议和隐私政策');
+                return;
+            }
+            
+            // 这里可以添加实际的试用申请逻辑
+            alert('申请成功，我们将在24小时内与您联系');
+            window.location.href = 'index.html';
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

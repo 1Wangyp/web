@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图书详情 - 轻松启蒙</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .book-detail {
+            padding: 60px 0;
+            background-color: white;
+        }
+        .book-detail-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .book-detail-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .book-detail-header h2 {
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+        .book-detail-header p {
+            font-size: 18px;
+            color: var(--text-light);
+        }
+        .book-detail-body {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .book-detail-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .book-detail-section h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+        .book-detail-section p {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        .book-detail-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 12px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .book-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .book-tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            font-size: 14px;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+        .read-btn {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        .read-btn:hover {
+            transform: scale(1.05);
+            background-color: #FFC107;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        .back-link:hover {
+            color: var(--primary-color);
+        }
+        .floating-back-btn {
+            position: fixed;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .floating-back-btn:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        .floating-back-btn i {
+            font-size: 20px;
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航区 -->
+    <header class="top-nav">
+        <div class="container">
+            <div class="nav-left">
+                <div class="logo">
+                    <img src="image/生成APP引导页首屏.png" alt="轻松启蒙" class="mascot">
+                    <h1>轻松启蒙</h1>
+                </div>
+            </div>
+            <div class="nav-right">
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-item">首页</a>
+                    <a href="product.html" class="nav-item">产品中心</a>
+                    <a href="about.html" class="nav-item">关于我们</a>
+                    <a href="contact.html" class="nav-item">联系我们</a>
+                </nav>
+                <div class="nav-actions">
+                    <a href="login.html" class="nav-btn">登录</a>
+                    <a href="register.html" class="nav-btn primary">注册</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 悬浮返回按钮 -->
+    <div class="floating-back-btn" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+
+    <!-- 图书详情区 -->
+    <section class="book-detail">
+        <div class="container">
+            <div class="book-detail-content">
+                <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> 返回首页</a>
+                <div class="book-detail-header">
+                    <h2 id="bookName">图书详情</h2>
+                    <p>为孩子提供优质的阅读体验</p>
+                </div>
+                <div class="book-detail-body">
+                    <div class="book-info">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cute%20cartoon%20children%20book%20cover%2C%20colorful%20and%20friendly%2C%20simple%20style&image_size=portrait_4_3" alt="图书封面" class="book-detail-image">
+                        <span class="book-tag">有声绘本</span>
+                        <button class="read-btn">开始阅读</button>
+                    </div>
+                    <div class="book-detail-section">
+                        <h3>图书介绍</h3>
+                        <p>这是一本适合幼儿阅读的优质绘本，通过生动有趣的故事和精美的插图，激发孩子的阅读兴趣，培养良好的阅读习惯。</p>
+                    </div>
+                    <div class="book-detail-section">
+                        <h3>阅读建议</h3>
+                        <p>1. 家长可以陪同孩子一起阅读<br>2. 鼓励孩子复述故事内容<br>3. 与孩子讨论故事中的情节和角色<br>4. 引导孩子表达自己的感受和想法</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部信息区 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <img src="image/生成APP引导页首屏.png" alt="轻松启蒙" class="mascot">
+                        <h2>轻松启蒙</h2>
+                    </div>
+                    <p>专业的幼儿教育平台，为孩子提供全面的启蒙教育体验</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-weibo"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-qq"></i></a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <h3>产品中心</h3>
+                    <ul>
+                        <li><a href="product.html">趣味启蒙</a></li>
+                        <li><a href="product.html">互动绘本</a></li>
+                        <li><a href="product.html">儿歌动画</a></li>
+                        <li><a href="product.html">家长中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h3>关于我们</h3>
+                    <ul>
+                        <li><a href="about.html">公司简介</a></li>
+                        <li><a href="about.html">团队介绍</a></li>
+                        <li><a href="about.html">新闻动态</a></li>
+                        <li><a href="about.html">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 400-123-4567</li>
+                        <li><i class="fas fa-envelope"></i> contact@qingsongqimeng.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 北京市海淀区中关村大街1号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 轻松启蒙 版权所有 | 京ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 获取URL参数中的图书名称
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+        
+        // 图书数据
+        const booksData = {
+            '猜猜我有多爱你': {
+                image: 'image/猜猜我有多爱你.png',
+                tag: '有声',
+                description: '睡前，温柔表达爱意的经典绘本。这本绘本通过大兔子和小兔子的对话，生动地表达了爱的含义，是亲子阅读的经典选择。',
+                readingTips: '1. 家长可以用温柔的语调朗读\n2. 与孩子分享彼此的爱意表达\n3. 鼓励孩子用自己的方式表达对家人的爱\n4. 可以在睡前阅读，营造温馨的氛围'
+            },
+            '蚂蚁和西瓜': {
+                image: 'image/蚂蚁和西瓜.png',
+                tag: '绘本',
+                description: '讲述团结合作，画面热闹有趣。这本绘本通过一群蚂蚁如何搬运一块大西瓜的故事，向孩子传递了团结合作的重要性。',
+                readingTips: '1. 引导孩子观察蚂蚁的分工合作\n2. 讨论如果自己遇到类似问题会怎么做\n3. 可以用角色扮演的方式重现故事\n4. 鼓励孩子与朋友一起完成任务，体验合作的乐趣'
+            },
+            '小熊宝宝绘本': {
+                image: 'image/小熊宝宝.png',
+                tag: '绘本',
+                description: '习惯养成绘本，吃饭、睡觉等日常好习惯。这套绘本通过可爱的小熊形象，教导孩子养成良好的生活习惯。',
+                readingTips: '1. 结合绘本内容，引导孩子养成相应的好习惯\n2. 可以用绘本中的情节与孩子的实际生活对比\n3. 鼓励孩子模仿绘本中的正确行为\n4. 家长可以与孩子一起制定生活习惯表'
+            },
+            '大象艾玛': {
+                image: 'image/大象艾玛儿童书籍封面设计 (1).png',
+                tag: '有声',
+                description: '教会孩子接纳自己和他人的不同。这本绘本通过大象艾玛的故事，向孩子传递了接纳差异、尊重他人的价值观。',
+                readingTips: '1. 讨论每个人的独特之处\n2. 引导孩子欣赏和尊重不同的人和事物\n3. 可以让孩子分享自己的独特之处\n4. 鼓励孩子与不同背景的朋友相处'
+            }
+        };
+        
+        // 设置图书信息
+        const bookName = getUrlParameter('name');
+        if (bookName && booksData[bookName]) {
+            const bookData = booksData[bookName];
+            document.getElementById('bookName').textContent = bookName;
+            document.querySelector('.book-detail-image').src = bookData.image;
+            document.querySelector('.book-tag').textContent = bookData.tag;
+            document.querySelector('.book-detail-section:nth-child(2) p').textContent = bookData.description;
+            document.querySelector('.book-detail-section:nth-child(3) p').textContent = bookData.readingTips;
+        }
+        
+        // 开始阅读按钮点击事件
+        document.querySelector('.read-btn').addEventListener('click', function() {
+            alert('开始阅读功能');
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

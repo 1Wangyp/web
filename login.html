@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 轻松启蒙</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .login-section {
+            padding: 60px 0;
+            background-color: var(--background-color);
+            min-height: calc(100vh - 200px);
+            display: flex;
+            align-items: center;
+        }
+        .login-container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .login-header h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+        .login-header p {
+            font-size: 16px;
+            color: var(--text-light);
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .form-group label {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        .form-group input {
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(255, 232, 139, 0.2);
+        }
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+        .form-options label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--text-light);
+            cursor: pointer;
+        }
+        .form-options a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .form-options a:hover {
+            text-decoration: underline;
+        }
+        .login-btn {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        .login-btn:hover {
+            transform: scale(1.02);
+            background-color: #FFC107;
+        }
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        .register-link a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+        .social-login {
+            margin-top: 30px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+        .social-login h3 {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            background-color: white;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .floating-back-btn {
+            position: fixed;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .floating-back-btn:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        .floating-back-btn i {
+            font-size: 20px;
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航区 -->
+    <header class="top-nav">
+        <div class="container">
+            <div class="nav-left">
+                <div class="logo">
+                    <img src="image/生成APP引导页首屏.png" alt="轻松启蒙" class="mascot">
+                    <h1>轻松启蒙</h1>
+                </div>
+            </div>
+            <div class="nav-right">
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-item">首页</a>
+                    <a href="product.html" class="nav-item">产品中心</a>
+                    <a href="about.html" class="nav-item">关于我们</a>
+                    <a href="contact.html" class="nav-item">联系我们</a>
+                </nav>
+                <div class="nav-actions">
+                    <a href="login.html" class="nav-btn active">登录</a>
+                    <a href="register.html" class="nav-btn primary">注册</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 悬浮返回按钮 -->
+    <div class="floating-back-btn" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+
+    <!-- 登录区 -->
+    <section class="login-section">
+        <div class="container">
+            <div class="login-container">
+                <div class="login-header">
+                    <h2>登录</h2>
+                    <p>欢迎回到轻松启蒙</p>
+                </div>
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="email">邮箱/手机号</label>
+                        <input type="text" id="email" name="email" placeholder="请输入邮箱或手机号">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">密码</label>
+                        <input type="password" id="password" name="password" placeholder="请输入密码">
+                    </div>
+                    <div class="form-options">
+                        <label>
+                            <input type="checkbox" name="remember"> 记住我
+                        </label>
+                        <a href="#">忘记密码？</a>
+                    </div>
+                    <button type="submit" class="login-btn">登录</button>
+                </form>
+                <div class="register-link">
+                    还没有账号？ <a href="register.html">立即注册</a>
+                </div>
+                <div class="social-login">
+                    <h3>其他登录方式</h3>
+                    <div class="social-buttons">
+                        <button class="social-btn"><i class="fab fa-weixin"></i></button>
+                        <button class="social-btn"><i class="fab fa-weibo"></i></button>
+                        <button class="social-btn"><i class="fab fa-qq"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部信息区 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <img src="image/生成APP引导页首屏.png" alt="轻松启蒙" class="mascot">
+                        <h2>轻松启蒙</h2>
+                    </div>
+                    <p>专业的幼儿教育平台，为孩子提供全面的启蒙教育体验</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-weibo"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-qq"></i></a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <h3>产品中心</h3>
+                    <ul>
+                        <li><a href="product.html">趣味启蒙</a></li>
+                        <li><a href="product.html">互动绘本</a></li>
+                        <li><a href="product.html">儿歌动画</a></li>
+                        <li><a href="product.html">家长中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h3>关于我们</h3>
+                    <ul>
+                        <li><a href="about.html">公司简介</a></li>
+                        <li><a href="about.html">团队介绍</a></li>
+                        <li><a href="about.html">新闻动态</a></li>
+                        <li><a href="about.html">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 400-123-4567</li>
+                        <li><i class="fas fa-envelope"></i> contact@qingsongqimeng.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 北京市海淀区中关村大街1号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 轻松启蒙 版权所有 | 京ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 登录表单提交事件
+        document.querySelector('.login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (!email || !password) {
+                alert('请输入邮箱/手机号和密码');
+                return;
+            }
+            
+            // 这里可以添加实际的登录逻辑
+            alert('登录成功');
+            window.location.href = 'index.html';
+        });
+        
+        // 社交登录按钮点击事件
+        document.querySelectorAll('.social-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const platform = this.querySelector('i').classList[1].replace('fa-', '');
+                alert(`使用${platform}登录`);
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

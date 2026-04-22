@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - 轻松启蒙</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .about-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+        .about-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .about-header h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+        .about-header p {
+            font-size: 18px;
+            color: var(--text-light);
+        }
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+        .about-section-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .about-section-content h3 {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+        .about-section-content p {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        .team-section {
+            background-color: var(--background-color);
+            padding: 60px 0;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .team-member {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+        }
+        .team-member h4 {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+        .team-member p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        .news-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .news-item {
+            background-color: var(--light-gray);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+        .news-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .news-date {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+        .news-item h4 {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+        .news-item p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        .floating-back-btn {
+            position: fixed;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .floating-back-btn:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        .floating-back-btn i {
+            font-size: 20px;
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航区 -->
+    <header class="top-nav">
+        <div class="container">
+            <div class="nav-left">
+                <div class="logo">
+                    <img src="image/生成APP引导页首屏.png" alt="轻松启蒙" class="mascot">
+                    <h1>轻松启蒙</h1>
+                </div>
+            </div>
+            <div class="nav-right">
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-item">首页</a>
+                    <a href="product.html" class="nav-item">产品中心</a>
+                    <a href="about.html" class="nav-item active">关于我们</a>
+                    <a href="contact.html" class="nav-item">联系我们</a>
+                </nav>
+                <div class="nav-actions">
+                    <a href="login.html" class="nav-btn">登录</a>
+                    <a href="register.html" class="nav-btn primary">注册</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 悬浮返回按钮 -->
+    <div class="floating-back-btn" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+
+    <!-- 关于我们区 -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-header">
+                <h2>关于我们</h2>
+                <p>专业的幼儿教育平台</p>
+            </div>
+            <div class="about-content">
+                <div class="about-section-content">
+                    <h3>公司简介</h3>
+                    <p>轻松启蒙是一家专注于幼儿教育的科技公司，致力于为3-6岁儿童提供高质量的启蒙教育内容和服务。我们的团队由教育专家、设计师和技术人员组成，通过创新的教育理念和先进的技术手段，为孩子打造一个快乐、安全、有效的学习环境。</p>
+                    <p>我们相信，每个孩子都有无限的潜能，通过科学的教育方法和个性化的学习体验，可以激发孩子的学习兴趣，培养良好的学习习惯，为孩子的未来发展奠定坚实的基础。</p>
+                </div>
+                <div class="about-section-content">
+                    <h3>我们的使命</h3>
+                    <p>通过科技赋能教育，让每个孩子都能享受到高质量的启蒙教育，培养孩子的创造力、思维能力和学习能力，为孩子的全面发展保驾护航。</p>
+                </div>
+                <div class="about-section-content">
+                    <h3>我们的愿景</h3>
+                    <p>成为全球领先的幼儿教育平台，为亿万家庭提供优质的教育内容和服务，让每个孩子都能在快乐中学习，在学习中成长。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 团队介绍区 -->
+    <section class="team-section">
+        <div class="container">
+            <div class="about-header">
+                <h2>团队介绍</h2>
+                <p>专业的团队，为孩子提供优质的教育服务</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>张老师</h4>
+                    <p>教育总监</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>李工程师</h4>
+                    <p>技术总监</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>王设计师</h4>
+                    <p>设计总监</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>陈运营</h4>
+                    <p>运营总监</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新闻动态区 -->
+    <section class="news-section">
+        <div class="container">
+            <div class="about-header">
+                <h2>新闻动态</h2>
+                <p>了解我们的最新动态</p>
+            </div>
+            <div class="news-grid">
+                <div class="news-item">
+                    <div class="news-date">2026-04-20</div>
+                    <h4>轻松启蒙APP正式上线</h4>
+                    <p>我们很高兴地宣布，轻松启蒙APP正式上线，为3-6岁儿童提供高质量的启蒙教育内容。</p>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">2026-04-15</div>
+                    <h4>轻松启蒙获得A轮融资</h4>
+                    <p>轻松启蒙获得1000万元A轮融资，将用于产品研发和市场推广。</p>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">2026-04-10</div>
+                    <h4>轻松启蒙与多家幼儿园达成合作</h4>
+                    <p>轻松启蒙与北京市多家幼儿园达成合作，为幼儿园提供优质的教育内容和服务。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部信息区 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <img src="image/生成APP引导页首屏.png" alt="轻松启蒙" class="mascot">
+                        <h2>轻松启蒙</h2>
+                    </div>
+                    <p>专业的幼儿教育平台，为孩子提供全面的启蒙教育体验</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-weibo"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-qq"></i></a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <h3>产品中心</h3>
+                    <ul>
+                        <li><a href="product.html">趣味启蒙</a></li>
+                        <li><a href="product.html">互动绘本</a></li>
+                        <li><a href="product.html">儿歌动画</a></li>
+                        <li><a href="product.html">家长中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h3>关于我们</h3>
+                    <ul>
+                        <li><a href="about.html">公司简介</a></li>
+                        <li><a href="about.html">团队介绍</a></li>
+                        <li><a href="about.html">新闻动态</a></li>
+                        <li><a href="about.html">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i>176-1412-6391 </li>
+                        <li><i class="fas fa-envelope"></i> xtiii0razs@163.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 杭州市钱塘区未来康瑞大厦</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 轻松启蒙 版权所有 | 京ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
